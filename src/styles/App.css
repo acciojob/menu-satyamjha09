@@ -1,37 +1,80 @@
-.container {
+body {
+  background: #f1f5f8;
+  font-family: Arial, sans-serif;
+}
+
+.section {
   text-align: center;
-  padding: 20px;
+  margin: 2rem auto;
+  max-width: 900px;
 }
 
-.buttons {
-  margin-bottom: 20px;
+.title h2 {
+  font-size: 2rem;
 }
 
-.buttons button {
-  margin: 5px;
-  padding: 10px;
+.underline {
+  width: 6rem;
+  height: 0.25rem;
+  background: #c59d5f;
+  margin: 0 auto;
+}
+
+.btn-container {
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid #c59d5f;
+  color: #c59d5f;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
   cursor: pointer;
+  transition: all 0.3s linear;
 }
 
-.menu-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.filter-btn:hover {
+  background: #c59d5f;
+  color: white;
+}
+
+.section-center {
+  display: grid;
+  gap: 2rem;
 }
 
 .menu-item {
-  width: 250px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.menu-item img {
-  width: 100%;
-  border-radius: 8px;
+.photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #c59d5f;
 }
 
-.info {
-  text-align: left;
+.item-info {
+  flex: 1;
+  padding-left: 1rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+.price {
+  color: #c59d5f;
+}
+
+.item-text {
+  margin-top: 0.5rem;
+  color: gray;
 }
