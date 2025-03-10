@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import Menu from "./Menu";
-import "../styles/App.css";
+import "../styles/App.css"
 
 const App = () => {
-  // State for the active category
   const [activeCategory, setActiveCategory] = useState("all");
 
-  // Menu items data
   const menuItems = [
     {
       id: 1,
@@ -59,13 +57,21 @@ const App = () => {
   ];
 
   return (
-    <div className="App">
+    <div className="App" id="main">
       <h1>Our Menu</h1>
       <div className="filter-buttons">
-        <button onClick={() => setActiveCategory("all")}>All</button>
-        <button onClick={() => setActiveCategory("breakfast")}>Breakfast</button>
-        <button onClick={() => setActiveCategory("lunch")}>Lunch</button>
-        <button onClick={() => setActiveCategory("shakes")}>Shakes</button>
+        <button id="filter-btn-0" onClick={() => setActiveCategory("all")}>
+          All
+        </button>
+        <button id="filter-btn-1" onClick={() => setActiveCategory("breakfast")}>
+          Breakfast
+        </button>
+        <button id="filter-btn-2" onClick={() => setActiveCategory("lunch")}>
+          Lunch
+        </button>
+        <button id="filter-btn-3" onClick={() => setActiveCategory("shakes")}>
+          Shakes
+        </button>
       </div>
       <Menu items={menuItems} activeCategory={activeCategory} />
     </div>
