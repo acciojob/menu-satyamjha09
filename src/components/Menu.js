@@ -1,7 +1,6 @@
 import React from "react";
 
 const Menu = ({ items, activeCategory }) => {
-  // Filter items based on the active category
   const filteredItems =
     activeCategory === "all"
       ? items
@@ -10,7 +9,11 @@ const Menu = ({ items, activeCategory }) => {
   return (
     <div className="menu-items">
       {filteredItems.map((item) => (
-        <div key={item.id} className="menu-item">
+        <div
+          key={item.id}
+          className="menu-item"
+          data-test-id={`menu-item-${item.category}`} // Add data-test-id
+        >
           <img src={item.img} alt={item.name} className="photo" />
           <div className="item-info">
             <header>
