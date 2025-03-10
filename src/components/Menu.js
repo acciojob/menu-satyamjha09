@@ -1,27 +1,28 @@
-import React from 'react'
+import React from "react";
 
-const Menu = ({ items }) => {
+const Menu = ({ items, activeCategory }) => {
+  // Filter items based on the active category
+  const filteredItems =
+    activeCategory === "all"
+      ? items
+      : items.filter((item) => item.category === activeCategory);
+
   return (
-    <div className="section-center">
-        {items.map((menuItem) => {
-            const { id, title , img , desc , price } = menuItem;
-
-            return (
-                <article key={id} className="menu-item">
-                    <img src={img} alt={title} className="photo" />
-                    <div className="item-info">
-                    <header>
-                        <h4>{title}</h4>
-                        <h4 className="price">${price}</h4>
-                    </header>
-                    <p className="item-text">{desc}</p>
-                    </div>
-                </article>
-            )
-        })}
-
+    <div className="menu-items">
+      {filteredItems.map((item) => (
+        <div key={item.id} className="menu-item">
+          <img src={item.img} alt={item.name} className="photo" />
+          <div className="item-info">
+            <header>
+              <h4>{item.name}</h4>
+              <h4 className="price">${item.price}</h4>
+            </header>
+            <p className="item-text">{item.desc}</p>
+          </div>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
